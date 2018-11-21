@@ -10,7 +10,7 @@ help_information = ">play (ahem, breathing, zvuv, lishtok, kafa, patachta, joke,
                    " tikanes, mishlochim, yerakot, beita_lapanim, bo_bo, oink, pokemon_go), >join, >leave"
 
 if not discord.opus.is_loaded():
-    discord.opus.load_opus("opusenc") 
+    discord.opus.load_opus("opusenc.exe") 
 
     
 @client.command(pass_context=True)
