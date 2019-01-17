@@ -6,11 +6,14 @@ Client = discord.Client()
 client = commands.Bot(command_prefix='>')
 
 players = {}
-help_information = ">play (ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo," \
-                   " tikanes, mishlochim, yerakot, beita_lapanim, bo_bo, oink, pokemon_go), >join, >leave"
+sounds = "ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo," \
+			" tikanes, mishlochim, yerakot, beita_lapanim, bo_bo, oink, pokemon_go), >join, >leave"
 
-if not discord.opus.is_loaded():
-    discord.opus.load_opus("opusenc.exe") 
+# On Windows
+# if not discord.opus.is_loaded():
+#     discord.opus.load_opus("opusenc.exe") 
+
+client.remove_command('help')
 
     
 @client.command(pass_context=True)
@@ -46,9 +49,22 @@ async def join(ctx):
 
 
 @client.command(pass_context=True)
-async def commands(ctx):
-    message = ctx.message
-    await client.send_message(message.channel, help_information)
+async def help(ctx):
+	embed = discord.Embed(color = discord.Color.orange())
+	embed.add_field(name='join', value='Joins a voice channel. Must use while inside a voice channel.', inline=True)
+	embed.add_field(name='leave', value='Leaves the voice channel currently in.', inline=True)
+	embed.add_field(name='play [sound]', value='Plays sound if inside a voice channel.', inline=True)
+	embed.add_field(name='sounds', value='Displays available sounds.', inline=True)
+
+	await client.send_message(ctx.message.channel, embed=embed)
+
+
+@client.command(pass_context=True)
+async def sounds(ctx):
+	embed = discord.Embed(color = discord.Color.orange())
+	embed.add_field(name='sounds', value=sounds, inline=True)
+
+	await client.send_message(ctx.message.channel, embed=embed)
 
     
 @client.command(pass_context=True)
