@@ -7,7 +7,7 @@ client = commands.Bot(command_prefix='>')
 
 players = {}
 sounds = "ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo," \
-			" tikanes, mishlochim, yerakot, beita_lapanim, bo_bo, oink, pokemon_go), >join, >leave"
+			" tikanes, mishlochim, yerakot, beita, beita_lapanim, bo_bo, oink, pokemon_go"
 
 # On Windows
 # if not discord.opus.is_loaded():
