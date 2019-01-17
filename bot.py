@@ -70,7 +70,7 @@ async def sounds(ctx):
 @client.command(pass_context=True)
 async def disconnect(ctx):
     if ctx.message.author.id == os.environ.get('OWNER'):
-        print('Disconnect')
+        print('Disconnecting...')
         await client.close()
     
 
