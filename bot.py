@@ -6,8 +6,7 @@ Client = discord.Client()
 client = commands.Bot(command_prefix='>')
 
 players = {}
-sounds = "ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo," \
-			" tikanes, mishlochim, yerakot, beita, beita_lapanim, bo_bo, oink, pokemon_go"
+# sounds = 'ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo, tikanes, mishlochim, yerakot, beita, beita_lapanim, bo_bo, oink, pokemon_go'
 
 # On Windows
 # if not discord.opus.is_loaded():
@@ -62,7 +61,7 @@ async def help(ctx):
 @client.command(pass_context=True)
 async def sounds(ctx):
 	embed = discord.Embed(color = discord.Color.orange())
-	embed.add_field(name='sounds', value=sounds, inline=True)
+	embed.add_field(name='sounds', value='ahem, breathing, zvuv, lishtok, kafa, patachta, joke, mafchid, lololo, tikanes, mishlochim, yerakot, beita, beita_lapanim, bo_bo, oink, pokemon_go', inline=True)
 
 	await client.send_message(ctx.message.channel, embed=embed)
 
